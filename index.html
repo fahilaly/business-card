@@ -59,19 +59,21 @@
                 <div class="card-face card-back">
                     <div class="texture"></div>
                     
-                    <div class="card-inner centered">
+                    <div class="card-inner portrait-layout">
                         
-                        <div class="linkedin-badge">
-                            <!-- Official LinkedIn SVG Icon -->
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#0A66C2" stroke="none"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                            <h2 class="scan-text">CONNECT ON LINKEDIN</h2>
+                        <div class="back-header">
+                            <i data-lucide="scan-line" class="scan-icon"></i>
+                            <h2 class="scan-text">SCAN FOR DIGITAL CARD</h2>
+                            <p class="scan-subtext">Portfolio, Contact & CV</p>
                         </div>
 
-                        <img 
-                            src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://www.linkedin.com/in/falhilaly/&bgcolor=ffffff&color=111111&margin=0" 
-                            alt="Scan to Connect"
-                            class="qr-code"
-                        >
+                        <div class="qr-container">
+                            <img 
+                                src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://fahilaly.github.io/business-card/&bgcolor=ffffff&color=111111&margin=0" 
+                                alt="Scan code"
+                                class="qr-code"
+                            >
+                        </div>
                         
                         <div class="action-buttons">
                             <a href="CV.pdf" class="save-contact" target="_blank">
