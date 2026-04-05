@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    /* Clean, soft studio lighting background */
+    background: #f0f0f3;
+    background-image: radial-gradient(circle at center, #ffffff 0%, #e2e2e8 100%);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.desk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ── Digital Portrait Card Format (Tall) ── */
+.card-scene {
+    perspective: 2000px;
+    width: clamp(280px, 90vw, 420px);
+    aspect-ratio: 1 / 1.7;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg) rotateZ(0deg) !important;
+}
+
+/* ── Card Material & Texture (Premium Smooth Matte White) ── */
+.card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background: #fafafa;
+    border-radius: 20px;
+    /* Soft, highly realistic physical drop shadow */
+    box-shadow: 
+        0 40px 80px -20px rgba(0,0,0,0.15), 
+        0 10px 30px -10px rgba(0,0,0,0.1),
+        inset 0 0 0 1px rgba(0,0,0,0.03); 
+    overflow: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.texture {
+    position: absolute;
+    inset: 0;
+    /* Dark noise to provide texture against the white card */
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Layout within the card ── */
+.card-inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 10% 8%;
+    display: flex;
+    flex-direction: column;
+}
+
+.portrait-layout {
+    justify-content: space-between;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+/* ── Typography ── */
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5%;
+}
+
+.name {
+    font-size: clamp(34px, 9.5vw, 54px); 
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    line-height: 1.05;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.role {
+    font-size: clamp(12px, 3.5vw, 15px);
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    color: #666666;
+    line-height: 1.4;
+}
+
+/* ── Contact Front (3 Massive Links) ── */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 2%;
+}
+
+/* ── Generic Hero Link Base ── */
+.standout-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-white {
+    width: 18px;
+    height: 18px;
+    color: #ffffff;
+}
+
+.link-label {
+    font-size: clamp(14px, 3.5vw, 18px);
+    font-weight: 600;
+    color: #222222;
+    letter-spacing: 0.05em;
+}
+
+/* 1. LinkedIn Theme */
+.linkedin-theme {
+    background: rgba(10, 102, 194, 0.06);
+    border: 1px solid rgba(10, 102, 194, 0.15);
+}
+.linkedin-theme:hover {
+    background: rgba(10, 102, 194, 0.12);
+    border-color: rgba(10, 102, 194, 0.3);
+    transform: translateY(-2px);
+}
+.linkedin-theme .icon-wrapper {
+    background: #0A66C2;
+}
+
+/* 2. Phone Theme */
+.phone-theme {
+    background: rgba(43, 204, 113, 0.06);
+    border: 1px solid rgba(43, 204, 113, 0.15);
+}
+.phone-theme:hover {
+    background: rgba(43, 204, 113, 0.12);
+    border-color: rgba(43, 204, 113, 0.3);
+    transform: translateY(-2px);
+}
+.phone-theme .icon-wrapper {
+    background: #2bcc71; /* Fresh crisp green */
+}
+
+/* 3. Email Theme */
+.email-theme {
+    background: rgba(231, 76, 60, 0.06);
+    border: 1px solid rgba(231, 76, 60, 0.15);
+}
+.email-theme:hover {
+    background: rgba(231, 76, 60, 0.12);
+    border-color: rgba(231, 76, 60, 0.3);
+    transform: translateY(-2px);
+}
+.email-theme .icon-wrapper {
+    background: #e74c3c; /* Elegant crisp red */
+}
+
+
+/* ── Back Element Layout ── */
+.linkedin-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.scan-text {
+    font-size: clamp(14px, 3.5vw, 18px);
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.qr-code {
+    width: clamp(160px, 45vw, 220px);
+    height: clamp(160px, 45vw, 220px);
+    background: transparent;
+    padding: 0;
+    margin-bottom: 40px;
+    mix-blend-mode: multiply; /* Ensures qr code white bg blends perfectly with card */
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.save-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: clamp(12px, 3.5vw, 16px);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    color: #888888;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 8px;
+    background: rgba(0,0,0,0.02);
+}
+
+.save-contact:hover {
+    color: #111111;
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.1);
+}
+
+.icon-small {
+    width: 18px;
+    height: 18px;
+}
+
+/* ── Out-of-card Instruction ── */
+.instruction {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #888888;
+    text-transform: uppercase;
+    animation: fadePulse 3s infinite;
+}
+
+@keyframes fadePulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* ── Toast ── */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #111111;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+}
+
+.toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

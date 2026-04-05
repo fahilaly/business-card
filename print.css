@@ -1,0 +1,124 @@
+/* Print CSS targeting physical dimensions */
+
+/* A4/Letter page setup */
+@page {
+    size: letter;
+    margin: 1in;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f0f0f0; /* So the user sees the card edges on screen */
+    font-family: 'Outfit', sans-serif;
+    color: #1a1a1a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact; /* Force render colors when printing */
+}
+
+.page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5in;
+    padding: 20px;
+    align-items: flex-start;
+}
+
+/* Standard US Business Card Size */
+.card {
+    position: relative;
+    width: 3.5in;
+    height: 2in;
+    background-color: #ffffff;
+    /* Optional: A subtle dashed border to serve as cut lines if printing at home */
+    border: 1px dashed #cccccc; 
+}
+
+/* When actually printing, hide outer background but keep cut lines */
+@media print {
+    body {
+        background-color: transparent;
+    }
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    padding: 0.25in;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Typography */
+.header h1 {
+    font-size: 14pt;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 2pt;
+}
+
+.header h2.major {
+    font-size: 8pt;
+    font-weight: 400;
+    color: #666666;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* Contact Info Layout */
+.footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4pt;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    gap: 6pt;
+}
+
+.contact .icon {
+    width: 8pt;
+    height: 8pt;
+    color: #000000;
+}
+
+.contact span {
+    font-size: 7.5pt;
+    font-weight: 300;
+    color: #333333;
+    letter-spacing: 0.01em;
+}
+
+/* Back of Card */
+.back {
+    background-color: #0a0a0a;
+}
+
+.qr {
+    width: 1in;
+    height: 1in;
+    background: #fff;
+    padding: 4pt; /* built-in white border for QR contrast */
+    margin-bottom: 8pt;
+}
+
+.scan-text {
+    font-size: 7pt;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+}

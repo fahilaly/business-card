@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faisal Alhelali — Digital Card</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <div class="desk">
+        <div class="card-scene">
+            <div class="card" id="card">
+                
+                <!-- ══════ FRONT OF DIGITAL CARD ══════ -->
+                <div class="card-face card-front">
+                    <!-- Physical texture overlay -->
+                    <div class="texture"></div>
+                    
+                    <div class="card-inner portrait-layout">
+                        <div class="brand">
+                            <h1 class="name">FAISAL<br>ALHELALI</h1>
+                            <p class="role">MECHATRONICS ENGINEERING<br>STUDENT</p>
+                        </div>
+                        
+                        <div class="contact-details">
+                            
+                            <!-- The Big Clickable LinkedIn Button -->
+                            <a href="https://www.linkedin.com/in/falhilaly/" target="_blank" class="standout-link linkedin-theme">
+                                <div class="icon-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#ffffff" stroke="none"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </div>
+                                <span class="link-label">in/falhilaly</span>
+                            </a>
+
+                            <!-- The Big Clickable Phone Button -->
+                            <a href="tel:+966533301766" class="standout-link phone-theme">
+                                <div class="icon-wrapper">
+                                    <i data-lucide="phone" class="icon-white"></i>
+                                </div>
+                                <span class="link-label">+966 533 301 766</span>
+                            </a>
+
+                            <!-- The Big Clickable Email Button -->
+                            <a href="mailto:Fahilaly@gmail.com" class="standout-link email-theme">
+                                <div class="icon-wrapper">
+                                    <i data-lucide="mail" class="icon-white"></i>
+                                </div>
+                                <span class="link-label">Fahilaly@gmail.com</span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ══════ BACK OF DIGITAL CARD ══════ -->
+                <div class="card-face card-back">
+                    <div class="texture"></div>
+                    
+                    <div class="card-inner centered">
+                        
+                        <div class="linkedin-badge">
+                            <!-- Official LinkedIn SVG Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="#0A66C2" stroke="none"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            <h2 class="scan-text">CONNECT ON LINKEDIN</h2>
+                        </div>
+
+                        <img 
+                            src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://www.linkedin.com/in/falhilaly/&bgcolor=ffffff&color=111111&margin=0" 
+                            alt="Scan to Connect"
+                            class="qr-code"
+                        >
+                        
+                        <div class="action-buttons">
+                            <a href="Faisal_Alhelali_CV.pdf" class="save-contact" target="_blank" download>
+                                <i data-lucide="file-text" class="icon-small"></i> VIEW CV
+                            </a>
+                            <a href="faisal_alhelali.vcf" class="save-contact" download>
+                                <i data-lucide="download" class="icon-small"></i> SAVE CONTACT
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <p class="instruction">Click anywhere on the card to flip</p>
+    </div>
+
+    <!-- Toast for copying actions -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
