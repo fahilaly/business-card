@@ -53,37 +53,38 @@ body {
 .card-face {
     position: absolute;
     inset: 0;
-    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #fafafa;
     border-radius: 20px;
-    /* Soft, highly realistic physical drop shadow */
     box-shadow: 
         0 40px 80px -20px rgba(0,0,0,0.15), 
         0 10px 30px -10px rgba(0,0,0,0.1),
         inset 0 0 0 1px rgba(0,0,0,0.03); 
-    /* Force GPU rendering flat per-face to prevent iOS bleed */
-    transform: translateZ(0); 
-    -webkit-transform: translateZ(0);
+    
+    /* Removed translateZ(0) which flattens the card in Safari */
 }
 
 .card-front {
-    transform: rotateY(0deg) translateZ(1px);
-    -webkit-transform: rotateY(0deg) translateZ(1px);
+    transform: rotateY(0deg) translateZ(2px);
+    -webkit-transform: rotateY(0deg) translateZ(2px);
     z-index: 2;
 }
 
 .card-back {
-    transform: rotateY(180deg) translateZ(1px);
-    -webkit-transform: rotateY(180deg) translateZ(1px);
+    transform: rotateY(180deg) translateZ(2px);
+    -webkit-transform: rotateY(180deg) translateZ(2px);
     z-index: 1;
 }
 
 .texture {
     position: absolute;
     inset: 0;
-    /* Dark noise to provide texture against the white card */
-    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    /* Changed to purely CSS noise to avoid filter-based GPU issues in Safari 3D */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(255,255,255,0.2) 0, transparent 50%),
+        url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+    opacity: 0.2;
     pointer-events: none;
     z-index: 0;
     border-radius: inherit;
@@ -92,12 +93,15 @@ body {
 /* ── Layout within the card ── */
 .card-inner {
     position: relative;
-    z-index: 1;
+    z-index: 5;
     width: 100%;
     height: 100%;
     padding: 10% 8%;
     display: flex;
     flex-direction: column;
+    /* Extra Safari depth reinforcement */
+    transform: translateZ(10px);
+    -webkit-transform: translateZ(10px);
 }
 
 .portrait-layout {
