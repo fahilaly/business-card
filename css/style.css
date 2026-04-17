@@ -358,3 +358,8 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+/* 4. GitHub Theme */
+.github-theme { background: rgba(36, 41, 46, 0.06); border: 1px solid rgba(36, 41, 46, 0.15); }
+.github-theme:hover { background: rgba(36, 41, 46, 0.12); border-color: rgba(36, 41, 46, 0.3); transform: translateY(-2px); }
+.github-theme .icon-wrapper { background: #24292e; }
