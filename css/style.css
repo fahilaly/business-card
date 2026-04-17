@@ -188,42 +188,64 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* ── Unified Premium Link Theme ── */
-.standout-link {
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+/* ── Individual Branded Themes (Restored) ── */
+.linkedin-theme { 
+    background: #0077b5 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.phone-theme { 
+    background: #28D146 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.email-theme { 
+    background: #ea4335 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.github-theme { 
+    background: #333333 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .standout-link:hover {
-    background: rgba(255, 255, 255, 0.95);
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
 }
 
-/* Individual themes focus on subtle border glows instead of heavy backgrounds */
-.linkedin-theme:hover { border-color: rgba(10, 102, 194, 0.3); }
-.phone-theme:hover { border-color: rgba(40, 209, 70, 0.3); }
-.email-theme:hover { border-color: rgba(234, 67, 53, 0.3); }
-.github-theme:hover { border-color: rgba(24, 23, 23, 0.3); }
-
-/* Transparent icon wrappers to let the official SVGs shine */
 .icon-wrapper {
-    background: transparent !important;
     width: 32px;
     height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent !important;
 }
 
 .icon-wrapper svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
+}
+
+/* Ensure consistent white coloring for icons in these themes */
+.linkedin-theme svg path,
+.phone-theme svg path,
+.phone-theme svg rect,
+.github-theme svg path {
+    fill: #ffffff !important;
+}
+
+/* Gmail M icon needs to handle multi-color carefully if we are back to red background */
+/* User liked the old way, so we'll make it crisp white on the red background */
+.email-theme svg path {
+    fill: #ffffff !important;
+    opacity: 1 !important;
 }
 
 .link-label {
-    color: #333333;
-    font-weight: 500;
-    font-size: 0.95rem;
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 
 
