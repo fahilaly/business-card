@@ -188,28 +188,28 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* ── Individual Branded Themes (Restored) ── */
+/* ── Individual Branded Themes (Restored V1) ── */
 .linkedin-theme { 
     background: #0077b5 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .phone-theme { 
     background: #28D146 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .email-theme { 
     background: #ea4335 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 .github-theme { 
-    background: #333333 !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #181717 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .standout-link:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.1);
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.15);
 }
 
 .icon-wrapper {
@@ -224,28 +224,24 @@ body {
 .icon-wrapper svg {
     width: 22px;
     height: 22px;
+    stroke: #ffffff !important;
+    stroke-width: 2.5px !important;
+    fill: none !important; /* Lucide icons are stroke-based */
 }
 
-/* Ensure consistent white coloring for icons in these themes */
-.linkedin-theme svg path,
-.phone-theme svg path,
-.phone-theme svg rect,
-.github-theme svg path {
-    fill: #ffffff !important;
-}
-
-/* Gmail M icon needs to handle multi-color carefully if we are back to red background */
-/* User liked the old way, so we'll make it crisp white on the red background */
-.email-theme svg path {
-    fill: #ffffff !important;
-    opacity: 1 !important;
+/* For icons that might have paths that need filling (like LinkedIn 'in') 
+   Lucide LinkedIn is stroke-based, so this is just a safety measure. */
+.icon-wrapper svg path {
+    fill: none;
+    stroke: #ffffff !important;
 }
 
 .link-label {
     color: #ffffff !important;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 
