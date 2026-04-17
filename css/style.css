@@ -188,46 +188,42 @@ body {
     letter-spacing: 0.05em;
 }
 
-/* 1. LinkedIn Theme */
-.linkedin-theme {
-    background: rgba(10, 102, 194, 0.06);
-    border: 1px solid rgba(10, 102, 194, 0.15);
-}
-.linkedin-theme:hover {
-    background: rgba(10, 102, 194, 0.12);
-    border-color: rgba(10, 102, 194, 0.3);
-    transform: translateY(-2px);
-}
-.linkedin-theme .icon-wrapper {
-    background: #0A66C2;
+/* ── Unified Premium Link Theme ── */
+.standout-link {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* 2. Phone Theme */
-.phone-theme {
-    background: rgba(43, 204, 113, 0.06);
-    border: 1px solid rgba(43, 204, 113, 0.15);
-}
-.phone-theme:hover {
-    background: rgba(43, 204, 113, 0.12);
-    border-color: rgba(43, 204, 113, 0.3);
-    transform: translateY(-2px);
-}
-.phone-theme .icon-wrapper {
-    background: #2bcc71; /* Fresh crisp green */
+.standout-link:hover {
+    background: rgba(255, 255, 255, 0.95);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* 3. Email Theme */
-.email-theme {
-    background: rgba(231, 76, 60, 0.06);
-    border: 1px solid rgba(231, 76, 60, 0.15);
+/* Individual themes focus on subtle border glows instead of heavy backgrounds */
+.linkedin-theme:hover { border-color: rgba(10, 102, 194, 0.3); }
+.phone-theme:hover { border-color: rgba(40, 209, 70, 0.3); }
+.email-theme:hover { border-color: rgba(234, 67, 53, 0.3); }
+.github-theme:hover { border-color: rgba(24, 23, 23, 0.3); }
+
+/* Transparent icon wrappers to let the official SVGs shine */
+.icon-wrapper {
+    background: transparent !important;
+    width: 32px;
+    height: 32px;
 }
-.email-theme:hover {
-    background: rgba(231, 76, 60, 0.12);
-    border-color: rgba(231, 76, 60, 0.3);
-    transform: translateY(-2px);
+
+.icon-wrapper svg {
+    width: 24px;
+    height: 24px;
 }
-.email-theme .icon-wrapper {
-    background: #e74c3c; /* Elegant crisp red */
+
+.link-label {
+    color: #333333;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
 
 
@@ -359,7 +355,4 @@ body {
     transform: translateX(-50%) translateY(0);
 }
 
-/* 4. GitHub Theme */
-.github-theme { background: rgba(36, 41, 46, 0.06); border: 1px solid rgba(36, 41, 46, 0.15); }
-.github-theme:hover { background: rgba(36, 41, 46, 0.12); border-color: rgba(36, 41, 46, 0.3); transform: translateY(-2px); }
-.github-theme .icon-wrapper { background: #24292e; }
+
