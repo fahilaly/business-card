@@ -151,7 +151,7 @@ body {
 .contact-details {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     padding-bottom: 2%;
 }
 
@@ -159,8 +159,8 @@ body {
 .standout-link {
     display: flex;
     align-items: center;
-    gap: 14px;
-    padding: 12px 14px;
+    gap: 12px;
+    padding: 10px 14px;
     border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
